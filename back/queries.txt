@@ -1,0 +1,40 @@
+
+query findAllUserWithQuotes{
+  users{
+    id
+    name
+    email
+    quotes{
+      quote
+      by
+    }
+  }
+}
+
+----
+query findAllQuotes{
+  quotes{
+    quote
+    by
+  }
+}
+____
+
+query findUserById($userid:ID!){
+  user(id:$userid){
+    id
+    name
+    email
+    quotes{
+      quote
+      by
+    }
+  }
+}
+
+query quotesByUserId($userid:ID!){
+  quotesByUser(by:$userid){
+    quote
+    by
+  }
+}
